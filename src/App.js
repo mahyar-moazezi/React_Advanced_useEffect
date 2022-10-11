@@ -1,10 +1,13 @@
 import "./styles.css";
-
+import { useFetch } from "./useFetch";
 export default function App() {
+  const { data } = useFetch({
+    url: "/joe.json",
+  });
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <div>Hi</div>
+      <div>{JSON.stringify(data)}</div>
     </div>
   );
 }
